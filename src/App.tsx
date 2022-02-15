@@ -4,6 +4,7 @@ import QuestionCard from './Components/QuestionCard';
 import {fecthQuizQuestions} from './API';
 import { QuestionsState, Difficulty } from './API';
 
+import { GlobalStyle, Wrapper } from './App.styles';
 const TOTAL_QUESTIONS = 5;
 
 export type AnswerObject = {
@@ -63,7 +64,9 @@ function App() {
    }
 
   return (
-    <div className="App">
+    <>
+    <GlobalStyle/>
+    <Wrapper>
      <h1> QUIZ</h1>
      {gameOver|| userAnswers.length === TOTAL_QUESTIONS ? (
             <button className ="start" onClick={startQuiz}>
@@ -91,7 +94,8 @@ function App() {
                 Next Question
               </button>
             ) : null}
-    </div>
+    </Wrapper>
+    </>
   );
 }
 
